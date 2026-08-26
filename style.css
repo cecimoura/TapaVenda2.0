@@ -249,19 +249,86 @@ section{padding-block:var(--sec);position:relative}
 .info-col .card{margin-top:0}
 
 /* ---------- instrutores ---------- */
-.instructors{text-align:center}
-.instr-photo{position:relative;max-width:560px;margin:0 auto 8px;aspect-ratio:16/11;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);
-  background:repeating-linear-gradient(115deg,#161616 0 12px,#0E0E0E 12px 24px)}
-.instr-names{display:flex;justify-content:space-between;align-items:flex-start;max-width:900px;margin:0 auto;gap:28px;flex-wrap:wrap}
-.instr-names .name{flex:1;min-width:220px}
-.instr-names .name:last-child{text-align:right}
-.instr-names h3{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(1.6rem,4.4vw,2.6rem);text-transform:uppercase;line-height:.95}
-.instr-names h3 span{color:var(--red);display:block}
-.instr-names p{font-size:.88rem;margin-top:10px;max-width:34ch}
-.instr-names .name:last-child p{margin-left:auto}
-@media(max-width:640px){
-  .instr-names .name,.instr-names .name:last-child{text-align:center}
-  .instr-names p,.instr-names .name:last-child p{margin-inline:auto}
+.instructors{
+  text-align:center;
+  overflow:hidden;
+}
+
+.instructors__grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:60px;
+  max-width:900px;
+  margin:0 auto;
+  align-items:start;
+}
+
+.instructor{
+  display:grid;
+  grid-template-rows:380px auto;
+  min-width:0;
+}
+
+/* MESMA ÁREA PARA AS DUAS FOTOS */
+.instructor__photo{
+  width:100%;
+  height:380px;
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+
+.instructor__photo img{
+  width:auto;
+  height:100%;
+  max-width:100%;
+  object-fit:contain;
+  object-position:bottom center;
+  display:block;
+}
+
+/* TEXTO COMEÇA NA MESMA ALTURA */
+.instructor__text{
+  width:100%;
+  margin-top:18px;
+  text-align:center;
+}
+
+.instructor__text h3{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  font-weight:900;
+  font-size:clamp(1.6rem,4vw,2.6rem);
+  text-transform:uppercase;
+  line-height:.95;
+}
+
+.instructor__text h3 span{
+  display:block;
+  color:var(--red);
+}
+
+.instructor__text p{
+  font-size:.88rem;
+  margin:14px auto 0;
+  max-width:34ch;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+  .instructors__grid{
+    grid-template-columns:1fr;
+    gap:50px;
+    max-width:440px;
+  }
+
+  .instructor{
+    grid-template-rows:340px auto;
+  }
+
+  .instructor__photo{
+    height:340px;
+  }
 }
 
 /* ---------- stat / biblioteca ---------- */
