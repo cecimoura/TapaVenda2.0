@@ -157,14 +157,20 @@ section{padding-block:var(--sec);position:relative}
 .card li::before{content:'✓';position:absolute;left:0;top:0;color:var(--green);font-weight:700;font-size:.85rem}
 
 /* ---------- módulo / trilha de conteúdo (card com foto) ---------- */
-.mod{position:relative;aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);
-  background:repeating-linear-gradient(115deg,#161616 0 12px,#0E0E0E 12px 24px);transition:transform .2s,border-color .2s}
-.mod:hover{transform:translateY(-3px);border-color:#3A3A3A}
-.mod-grad{position:absolute;inset:auto 0 0 0;height:70%;background:linear-gradient(180deg,transparent,rgba(5,5,5,.94) 75%);padding:14px;display:flex;flex-direction:column;justify-content:flex-end}
-.mod-eyebrow{font-size:.6rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:5px}
-.mod-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.86rem;text-transform:uppercase;line-height:1.2;color:#fff;overflow-wrap:break-word}
-.mod-foot{display:flex;align-items:center;justify-content:space-between;margin-top:10px;font-size:.62rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
-.mod-foot img{height:11px;width:auto;opacity:.85}
+.mod{
+  position:relative;
+  aspect-ratio:3/4;
+  border-radius:var(--r);
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:repeating-linear-gradient(115deg,#161616 0 12px,#0E0E0E 12px 24px);
+  transition:transform .2s,border-color .2s;
+}
+
+.mod:hover{
+  transform:translateY(-3px);
+  border-color:#3A3A3A;
+}
 
 .mod-bg{
   position:absolute;
@@ -187,6 +193,46 @@ section{padding-block:var(--sec);position:relative}
   flex-direction:column;
   justify-content:flex-end;
   z-index:1;
+}
+
+.mod-eyebrow{
+  font-size:.76rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:5px;
+}
+
+.mod-title{
+  font-family:'Montserrat',sans-serif;
+  font-weight:800;
+  font-size:.76rem;
+  text-transform:uppercase;
+  line-height:1.15;
+  color:#fff;
+
+  /* reserva espaço igual para todos os títulos */
+  height:42px;
+  display:flex;
+  align-items:flex-start;
+}
+
+.mod-foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:10px;
+  font-size:.62rem;
+  color:var(--muted);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+.mod-foot img{
+  height:11px;
+  width:auto;
+  opacity:.85;
 }
 
 /* AO VIVO / PRESENCIAL — cards maiores em destaque */
