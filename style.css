@@ -166,6 +166,29 @@ section{padding-block:var(--sec);position:relative}
 .mod-foot{display:flex;align-items:center;justify-content:space-between;margin-top:10px;font-size:.62rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
 .mod-foot img{height:11px;width:auto;opacity:.85}
 
+.mod-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  z-index:0;
+}
+
+.mod-grad{
+  position:absolute;
+  inset:auto 0 0 0;
+  height:70%;
+  background:linear-gradient(180deg,transparent,rgba(5,5,5,.94) 75%);
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  z-index:1;
+}
+
 /* AO VIVO / PRESENCIAL — cards maiores em destaque */
 .live{position:relative;aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;border:1px solid rgba(235,73,79,.4);
   background:repeating-linear-gradient(115deg,#1a1414 0 12px,#0E0909 12px 24px)}
