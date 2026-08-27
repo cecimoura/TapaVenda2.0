@@ -468,7 +468,7 @@ section{padding-block:var(--sec);position:relative}
 .foot-card p{font-size:.9rem;margin-bottom:18px}
 footer{border-top:1px solid var(--line)}
 .foot-bar{padding:22px 0;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;color:var(--muted);font-size:.82rem}
-.foot-bar .brand img{height:20px}
+.foot-bar .brand img{height:50px}
 
 /* ---------- CTA fixo mobile ---------- */
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:70;padding:12px var(--pad) calc(12px + env(safe-area-inset-bottom));
