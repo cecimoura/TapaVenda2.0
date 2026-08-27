@@ -53,7 +53,8 @@ p{color:var(--muted)}
   display:inline-flex;align-items:center;gap:8px;
   font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:800;
   letter-spacing:.14em;text-transform:uppercase;color:#fff;
-  background:var(--red);padding:6px 14px;border-radius:999px;margin-bottom:18px;
+  background:var(--red);padding:8px 18px;border-radius:999px;margin-bottom:18px;
+  font-size:.80rem;
 }
 
 .wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--pad)}
@@ -350,8 +351,10 @@ section{padding-block:var(--sec);position:relative}
 .stat{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;justify-content:center}
 .stat b{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(3.2rem,10vw,6.5rem);line-height:.85;letter-spacing:-.03em;color:var(--red)}
 .stat span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+
 /* ---------- mockup — biblioteca técnica ---------- */
 .ebook-wrap{display:flex;justify-content:center;padding:12px 0 6px}
+
 /* mockup — PDF aberto (GIF de rolagem real) */
 .pdf-mock{border-radius:14px;overflow:hidden;background:#F1F2F4;box-shadow:0 24px 50px -24px rgba(0,0,0,.7)}
 .pdf-mock-top{display:flex;align-items:center;gap:6px;padding:11px 14px;background:#E1E3E6;border-bottom:1px solid rgba(0,0,0,.08)}
@@ -360,6 +363,7 @@ section{padding-block:var(--sec);position:relative}
 .pdf-mock-dot:nth-child(3){background:#61C554}
 .pdf-mock-body{aspect-ratio:4/5;background:#F1F2F4}
 .pdf-mock-body img{width:100%;height:100%;object-fit:contain;display:block}
+
 /* leque de 3 PDFs — 01 no centro/frente, 02 e 03 atrás nos lados */
 .pdf-fan{position:relative;width:min(460px,94vw);height:350px;margin:0 auto}
 .pdf-fan .pdf-mock{position:absolute;top:0}
@@ -374,9 +378,35 @@ section{padding-block:var(--sec);position:relative}
   .pdf-fan .pf-l{left:0}
   .pdf-fan .pf-r{right:0}
 }
-.alert{border:1px solid rgba(235,73,79,.35);background:rgba(235,73,79,.05);border-radius:var(--r);padding:clamp(22px,3vw,30px);margin-top:26px}
-.alert h3{color:var(--red);text-transform:uppercase;margin-bottom:10px;font-size:clamp(1rem,2.2vw,1.2rem)}
-.alert p{font-size:.94rem;max-width:70ch}
+
+.alert{
+    border:1px solid rgba(235,73,79,.35);
+    background:rgba(235,73,79,.05);
+    border-radius:var(--r);
+    padding:clamp(18px,2.5vw,26px);
+    margin-top:26px;
+
+    max-width:850px;
+    margin-left:auto;
+    margin-right:auto;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.alert h3{
+    color:var(--red);
+    text-transform:uppercase;
+    margin-bottom:10px;
+    font-size:clamp(1rem,2.2vw,1.2rem);
+}
+
+.alert p{
+    font-size:.94rem;
+    max-width:70ch;
+}
 
 /* ---------- depoimentos ---------- */
 .vid{border:1px solid var(--line);background:var(--card);border-radius:var(--r);overflow:hidden;text-align:left;width:100%;transition:border-color .2s,transform .2s}
