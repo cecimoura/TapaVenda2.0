@@ -363,7 +363,13 @@ section{padding-block:var(--sec);position:relative}
 
 /* ---------- stat / biblioteca ---------- */
 .stat{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;justify-content:center}
-.stat b{font-family:'Montserrat',sans-serif;font-weight:900;font-size:clamp(3.2rem,10vw,6.5rem);line-height:.85;letter-spacing:-.03em;color:var(--red)}
+.stat b{
+  font-family:'Montserrat',sans-serif;
+  font-weight:900;font-size:clamp(3.2rem,10vw,6.5rem);
+  line-height:.85;letter-spacing:-.03em;color:var(--red);
+  filter: drop-shadow(0 0 8px rgba(255, 3, 3, 0.582));
+}
+
 .stat span{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
 
 /* ---------- mockup — biblioteca técnica ---------- */
