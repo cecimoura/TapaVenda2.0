@@ -220,10 +220,36 @@ section{padding-block:var(--sec);position:relative}
 }
 
 /* AO VIVO / PRESENCIAL — cards maiores em destaque */
-.live{position:relative;aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;border:1px solid rgba(235,73,79,.4);
-  background:repeating-linear-gradient(115deg,#1a1414 0 12px,#0E0909 12px 24px)}
+.live {
+     position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    
+    overflow: hidden;
+
+    background-image: url("assets/Imagens/capa-esteira-conteudos.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .live-badge{position:absolute;top:14px;left:14px;z-index:2;background:var(--red);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.68rem;letter-spacing:.08em;padding:6px 14px;border-radius:999px;text-transform:uppercase}
-.live-grad{position:absolute;inset:auto 0 0 0;height:75%;background:linear-gradient(180deg,transparent,rgba(5,5,5,.95) 70%);padding:20px;display:flex;flex-direction:column;justify-content:flex-end}
+
+.live-grad {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 75%;
+    background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(5, 5, 5, .95) 70%
+    );
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 .live-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.05rem;text-transform:uppercase;color:#fff;margin-bottom:10px}
 .live-foot{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
 .live-foot b{color:var(--red);text-transform:uppercase}
