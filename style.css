@@ -243,13 +243,18 @@ section{padding-block:var(--sec);position:relative}
     background: linear-gradient(
         180deg,
         transparent,
-        rgba(5, 5, 5, .95) 70%
+        rgba(5, 5, 5, 0.781) 70%
     );
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
+
+.section-head h2 span {
+    color: var(--red);
+}  
+
 .live-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.05rem;text-transform:uppercase;color:#fff;margin-bottom:10px}
 .live-foot{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
 .live-foot b{color:var(--red);text-transform:uppercase}
