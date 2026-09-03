@@ -470,33 +470,829 @@ section{padding-block:var(--sec);position:relative}
 .faq-a div{padding:0 22px 22px;max-width:70ch;color:var(--muted);font-size:.95rem}
 
 /* ---------- oferta ---------- */
-.offer{border:1px solid var(--line);background:var(--card);border-radius:var(--r);overflow:hidden}
+/* =========================================================
+   OFERTA
+========================================================= */
+
+.offer{
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:var(--r);
+  overflow:hidden;
+}
+
 .offer + .offer{
   margin-top:28px;
 }
 
-.offer-top{padding:clamp(24px,4vw,36px);border-bottom:1px solid var(--line);background:var(--panel)}
+.offer-top{
+  padding:clamp(24px,4vw,36px);
+
+  border-bottom:1px solid var(--line);
+
+  background:var(--panel);
+
+  text-align:center;
+}
 
 .offer-top h3{
-  font-size:clamp(1.3rem,2.8vw,1.8rem);
-  text-transform:uppercase;
   margin-bottom:6px;
+
   color:#fff;
+
+  font-size:clamp(1.3rem,2.8vw,1.8rem);
+
+  text-transform:uppercase;
 }
 
 .offer-top h3 span{
   color:var(--red);
 }
 
-.offer-top p{font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.offer-body{padding:clamp(24px,3.4vw,36px)}
-.offer-body h4{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:18px}
-.offer-body ul{list-style:none;display:grid;gap:12px;margin-bottom:28px}
-@media(min-width:720px){.offer-body ul{grid-template-columns:1fr 1fr}}
-.offer-body li{display:flex;gap:10px;align-items:flex-start;font-size:.98rem;color:#D6D9DC}
-.offer-cta{border-top:1px solid var(--line);padding-top:26px;text-align:center}
-.offer-cta p{margin-bottom:16px;font-size:.94rem}
+.offer-top p{
+  margin:0;
 
+  color:var(--muted);
+
+  font-size:.82rem;
+  font-weight:700;
+
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   CORPO
+========================================================= */
+
+.offer-body{
+  padding:clamp(28px,4vw,44px);
+}
+
+.offer-body h4{
+  margin-bottom:18px;
+
+  color:var(--red);
+
+  font-family:'Montserrat',sans-serif;
+  font-weight:800;
+  font-size:.78rem;
+
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+
+/* LISTAS PADRÃO DA OFERTA */
+
+.offer-body > ul{
+  display:grid;
+
+  gap:12px;
+
+  margin-bottom:28px;
+
+  list-style:none;
+}
+
+.offer-body > ul li{
+  display:flex;
+  align-items:flex-start;
+
+  gap:10px;
+
+  color:#D6D9DC;
+
+  font-size:.98rem;
+}
+
+.offer-body > ul li svg{
+  flex-shrink:0;
+
+  margin-top:2px;
+}
+
+@media(min-width:720px){
+
+  .offer-body > ul{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+
+/* CTA */
+
+.offer-cta{
+  margin-top:30px;
+  padding-top:26px;
+
+  border-top:1px solid var(--line);
+
+  text-align:center;
+}
+
+.offer-cta p{
+  max-width:650px;
+
+  margin:0 auto 16px;
+
+  font-size:.94rem;
+}
+
+
+/* =========================================================
+   O QUE ESTÁ INCLUSO · INTRO
+========================================================= */
+
+.offer-intro{
+  width:100%;
+  max-width:850px;
+
+  margin:0 auto 28px;
+
+  color:#D6D9DC;
+
+  font-size:.98rem;
+  line-height:1.75;
+
+  text-align:center;
+}
+
+
+/* =========================================================
+   CENTRALIZAÇÃO DO CONTEÚDO
+========================================================= */
+
+.content-legend,
+.course-accordions,
+.offer-extra,
+.offer-bonus{
+  width:100%;
+  max-width:1000px;
+
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+/* =========================================================
+   LEGENDA
+========================================================= */
+
+.content-legend{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+
+  gap:12px 24px;
+
+  padding:16px 20px;
+  margin-bottom:30px;
+
+  border:1px solid var(--line);
+  border-radius:10px;
+
+  background:rgba(255,255,255,.018);
+}
+
+.content-legend > span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  gap:8px;
+
+  color:var(--muted);
+
+  font-size:.76rem;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+  padding:4px 7px;
+
+  border-radius:4px;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:.60rem;
+  font-weight:800;
+
+  letter-spacing:.05em;
+
+  white-space:nowrap;
+}
+
+.status.novo{
+  color:#6ADF57;
+
+  border:1px solid rgba(106,223,87,.30);
+
+  background:rgba(106,223,87,.07);
+}
+
+.status.ampliado{
+  color:#E9B949;
+
+  border:1px solid rgba(233,185,73,.30);
+
+  background:rgba(233,185,73,.07);
+}
+
+.status.atualizado{
+  color:#ff5a5f;
+
+  border:1px solid rgba(255,90,95,.30);
+
+  background:rgba(255,90,95,.07);
+}
+
+.status.confirmar{
+  color:#aaa;
+
+  border:1px dashed #555;
+
+  background:rgba(255,255,255,.02);
+}
+
+
+/* =========================================================
+   ACCORDIONS
+========================================================= */
+
+.course-accordions{
+  display:flex;
+  flex-direction:column;
+
+  gap:10px;
+}
+
+.course-accordion{
+  overflow:hidden;
+
+  border:1px solid var(--line);
+  border-radius:10px;
+
+  background:rgba(255,255,255,.012);
+
+  transition:
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.course-accordion:hover{
+  border-color:rgba(255,70,70,.30);
+
+  background:rgba(255,255,255,.018);
+}
+
+.course-accordion[open]{
+  border-color:rgba(255,70,70,.35);
+}
+
+
+/* =========================================================
+   CABEÇALHO DO ACCORDION
+========================================================= */
+
+.course-accordion summary{
+  position:relative;
+
+  display:grid;
+  grid-template-columns:90px 1fr 34px;
+  align-items:center;
+
+  gap:16px;
+
+  padding:17px 20px;
+
+  cursor:pointer;
+  user-select:none;
+
+  list-style:none;
+}
+
+.course-accordion summary::-webkit-details-marker{
+  display:none;
+}
+
+.course-accordion summary::marker{
+  display:none;
+}
+
+.block-number{
+  color:var(--red);
+
+  font-family:'Montserrat',sans-serif;
+  font-size:.65rem;
+  font-weight:800;
+
+  letter-spacing:.08em;
+}
+
+.block-title{
+  display:flex;
+  flex-direction:column;
+
+  gap:3px;
+
+  text-align:left;
+}
+
+.block-title strong{
+  color:#fff;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:.9rem;
+  font-weight:800;
+
+  letter-spacing:.03em;
+}
+
+.block-title small{
+  color:var(--muted);
+
+  font-size:.76rem;
+}
+
+
+/* =========================================================
+   BOTÃO +
+========================================================= */
+
+.accordion-arrow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:30px;
+  height:30px;
+
+  border:1px solid var(--line);
+  border-radius:50%;
+
+  color:var(--red);
+
+  font-size:1.15rem;
+  font-weight:400;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease;
+}
+
+.course-accordion:hover .accordion-arrow{
+  border-color:rgba(255,70,70,.35);
+}
+
+.course-accordion[open] .accordion-arrow{
+  transform:rotate(45deg);
+
+  background:rgba(255,70,70,.05);
+}
+
+
+/* =========================================================
+   CONTEÚDO ABERTO DO ACCORDION
+========================================================= */
+
+.accordion-content{
+  width:100%;
+  max-width:820px;
+
+  margin:0 auto;
+
+  padding:4px 24px 22px;
+}
+
+.accordion-content > p{
+  max-width:720px;
+
+  margin:0 auto 18px;
+
+  color:var(--muted);
+
+  font-size:.86rem;
+  line-height:1.65;
+
+  text-align:center;
+}
+
+
+/* SOBRESCREVE O GRID PADRÃO DA OFFER-BODY */
+
+.offer-body .accordion-content ul{
+  display:flex;
+  flex-direction:column;
+
+  width:100%;
+  max-width:720px;
+
+  gap:0;
+
+  margin:0 auto;
+
+  list-style:none;
+}
+
+
+/* ITENS INTERNOS */
+
+.accordion-content li{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  width:100%;
+
+  gap:20px;
+
+  padding:12px 4px;
+
+  border-top:1px solid rgba(255,255,255,.05);
+
+  color:#D6D9DC;
+
+  font-size:.88rem;
+}
+
+.accordion-content li:first-child{
+  border-top:none;
+}
+
+
+/* =========================================================
+   CHECK VERDE
+========================================================= */
+
+.accordion-content li > span:first-child{
+  position:relative;
+
+  padding-left:24px;
+
+  text-align:left;
+}
+
+.accordion-content li > span:first-child::before{
+  content:"✓";
+
+  position:absolute;
+
+  left:0;
+  top:0;
+
+  color:#6ADF57;
+
+  font-weight:700;
+}
+
+
+/* =========================================================
+   ALÉM DAS AULAS
+========================================================= */
+
+.offer-extra{
+  margin-top:44px;
+  padding-top:34px;
+
+  border-top:1px solid var(--line);
+}
+
+.extra-heading{
+  max-width:700px;
+
+  margin:0 auto 24px;
+
+  text-align:center;
+}
+
+.extra-heading h4,
+.offer-bonus > h4{
+  margin-bottom:7px;
+}
+
+.extra-heading p{
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:.87rem;
+}
+
+
+/* =========================================================
+   CARDS · ALÉM DAS AULAS
+========================================================= */
+
+.extra-items{
+  display:grid;
+
+  grid-template-columns:repeat(3,minmax(0,1fr));
+
+  width:100%;
+
+  gap:14px;
+
+  margin:0 auto;
+}
+
+.extra-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  gap:10px;
+
+  min-height:190px;
+
+  padding:24px 20px;
+
+  border:1px solid var(--line);
+  border-radius:12px;
+
+  background:rgba(255,255,255,.015);
+
+  text-align:center;
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.extra-item:hover{
+  transform:translateY(-2px);
+
+  border-color:rgba(255,255,255,.12);
+
+  background:rgba(255,255,255,.022);
+}
+
+
+/* CHECK DOS CARDS */
+
+.extra-check{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
+
+  width:28px;
+  height:28px;
+
+  color:#6ADF57;
+
+  font-size:1.05rem;
+  font-weight:700;
+}
+
+
+/* TEXTO DOS CARDS */
+
+.extra-item strong,
+.bonus-item strong{
+  display:block;
+
+  color:#fff;
+
+  font-size:.9rem;
+  line-height:1.45;
+}
+
+.extra-item p,
+.bonus-item p{
+  margin:8px 0 0;
+
+  color:var(--muted);
+
+  font-size:.80rem;
+  line-height:1.6;
+}
+
+
+/* =========================================================
+   BÔNUS
+========================================================= */
+
+.offer-bonus{
+  margin-top:38px;
+
+  text-align:center;
+}
+
+.offer-bonus > h4{
+  text-align:center;
+}
+
+.bonus-items{
+  display:grid;
+
+  grid-template-columns:repeat(3,minmax(0,1fr));
+
+  width:100%;
+
+  gap:14px;
+
+  margin:18px auto 0;
+}
+
+.bonus-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  gap:10px;
+
+  min-height:140px;
+
+  padding:22px 20px;
+
+  border:1px solid rgba(255,70,70,.20);
+  border-radius:12px;
+
+  background:rgba(255,70,70,.025);
+
+  text-align:center;
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    background .2s ease;
+}
+
+.bonus-item:hover{
+  transform:translateY(-2px);
+
+  border-color:rgba(255,70,70,.35);
+
+  background:rgba(255,70,70,.04);
+}
+
+
+/* =========================================================
+   CARD 02 · CONDIÇÕES DE COMPRA
+========================================================= */
+
+.offer-conditions .offer-body{
+  max-width:none;
+}
+
+.offer-conditions .offer-body > ul{
+  width:100%;
+  max-width:900px;
+
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:28px;
+}
+
+.offer-conditions .offer-cta{
+  width:100%;
+  max-width:900px;
+
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+/* =========================================================
+   RESPONSIVO · TABLET
+========================================================= */
+
+@media(max-width:850px){
+
+  .extra-items,
+  .bonus-items{
+    grid-template-columns:1fr;
+  }
+
+  .extra-item,
+  .bonus-item{
+    min-height:0;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVO · MOBILE
+========================================================= */
+
+@media(max-width:650px){
+
+  .offer-top{
+    text-align:left;
+  }
+
+  .offer-body{
+    padding:24px 16px;
+  }
+
+  .offer-intro{
+    text-align:left;
+  }
+
+
+  /* LEGENDA */
+
+  .content-legend{
+    flex-direction:column;
+    align-items:flex-start;
+
+    gap:10px;
+
+    text-align:left;
+  }
+
+  .content-legend > span{
+    justify-content:flex-start;
+
+    text-align:left;
+  }
+
+
+  /* ACCORDION */
+
+  .course-accordion summary{
+    grid-template-columns:1fr 34px;
+
+    gap:8px 12px;
+
+    padding:16px;
+  }
+
+  .block-number{
+    grid-column:1;
+  }
+
+  .block-title{
+    grid-column:1;
+  }
+
+  .accordion-arrow{
+    grid-column:2;
+    grid-row:1 / span 2;
+  }
+
+  .accordion-content{
+    max-width:none;
+
+    padding:4px 16px 18px;
+  }
+
+  .accordion-content > p{
+    text-align:left;
+  }
+
+  .accordion-content li{
+    align-items:flex-start;
+    flex-direction:column;
+
+    gap:8px;
+
+    padding:13px 0;
+  }
+
+
+  /* ALÉM DAS AULAS */
+
+  .extra-heading{
+    text-align:left;
+  }
+
+  .extra-item,
+  .bonus-item{
+    align-items:flex-start;
+
+    text-align:left;
+  }
+
+  .offer-bonus{
+    text-align:left;
+  }
+
+  .offer-bonus > h4{
+    text-align:left;
+  }
+
+}
+
+/*condições de compra*/
 .conditions-intro{
   max-width:900px;
   color:#D6D9DC;
