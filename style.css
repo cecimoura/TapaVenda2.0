@@ -471,7 +471,12 @@ section{padding-block:var(--sec);position:relative}
 
 /* ---------- oferta ---------- */
 .offer{border:1px solid var(--line);background:var(--card);border-radius:var(--r);overflow:hidden}
+.offer + .offer{
+  margin-top:28px;
+}
+
 .offer-top{padding:clamp(24px,4vw,36px);border-bottom:1px solid var(--line);background:var(--panel)}
+
 .offer-top h3{
   font-size:clamp(1.3rem,2.8vw,1.8rem);
   text-transform:uppercase;
@@ -491,6 +496,163 @@ section{padding-block:var(--sec);position:relative}
 .offer-body li{display:flex;gap:10px;align-items:flex-start;font-size:.98rem;color:#D6D9DC}
 .offer-cta{border-top:1px solid var(--line);padding-top:26px;text-align:center}
 .offer-cta p{margin-bottom:16px;font-size:.94rem}
+
+.conditions-intro{
+  max-width:900px;
+  color:#D6D9DC;
+  font-size:.96rem;
+  line-height:1.7;
+  margin-bottom:32px;
+}
+
+.condition-block{
+  padding:24px 0;
+  border-top:1px solid var(--line);
+}
+
+.condition-block:first-of-type{
+  border-top:0;
+}
+
+.condition-block h5{
+  margin:0 0 8px;
+  font-family:'Montserrat',sans-serif;
+  color:#fff;
+  font-size:1rem;
+  font-weight:800;
+}
+
+.condition-block h5 span{
+  color:var(--red);
+  font-size:.7rem;
+  letter-spacing:.08em;
+  margin-right:8px;
+}
+
+.condition-block > strong{
+  display:block;
+  color:#fff;
+  font-size:.9rem;
+  margin-bottom:7px;
+}
+
+.condition-block > p{
+  color:var(--muted);
+  font-size:.88rem;
+  line-height:1.6;
+  margin-bottom:16px;
+}
+
+/* evita o grid de 2 colunas do CSS original */
+.offer-body .condition-block ul{
+  display:flex;
+  flex-direction:column;
+  gap:9px;
+  margin:0;
+}
+
+.condition-block li{
+  position:relative;
+  display:block;
+  padding-left:17px;
+  font-size:.88rem;
+  color:#D6D9DC;
+}
+
+.condition-block li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.55em;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--red);
+}
+
+.condition-block li b{
+  color:var(--red);
+  font-size:.68rem;
+  font-family:'Montserrat',sans-serif;
+}
+
+.condition-extra{
+  margin-top:30px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+
+.condition-benefit{
+  padding:16px 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.condition-benefit strong{
+  display:block;
+  color:#fff;
+  margin-bottom:6px;
+}
+
+.condition-benefit p{
+  color:var(--muted);
+  line-height:1.65;
+  font-size:.9rem;
+  margin:0;
+}
+
+.offer-body .condition-bonus ul{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin:0;
+}
+
+.condition-bonus li{
+  padding:15px 18px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:rgba(255,255,255,.02);
+}
+
+.conditions{
+  margin-top:30px;
+}
+
+.conditions h4{
+  font-family:'Montserrat',sans-serif;
+  font-weight:800;
+  font-size:.78rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:18px;
+}
+
+.conditions ul{
+  list-style:none;
+  display:grid;
+  gap:12px;
+  margin-bottom:28px;
+}
+
+@media(min-width:720px){
+  .conditions ul{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+.conditions li{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  font-size:.98rem;
+  color:#D6D9DC;
+}
+
+.conditions li svg{
+  flex-shrink:0;
+  margin-top:2px;
+}
 
 /* ---------- CTA final ---------- */
 .final{text-align:center}
