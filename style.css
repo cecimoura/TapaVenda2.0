@@ -255,6 +255,7 @@ section{padding-block:var(--sec);position:relative}
     color: var(--red);
 }  
 
+
 .live-title{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.05rem;text-transform:uppercase;color:#fff;margin-bottom:10px}
 .live-foot{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
 .live-foot b{color:var(--red);text-transform:uppercase}
@@ -554,6 +555,10 @@ section{padding-block:var(--sec);position:relative}
 .topic-accordion[open]{
   border-color:var(--red);
   background:rgba(255,255,255,.04);
+}
+
+#topic-title{
+  color: #062608;
 }
 
 /* cabeçalho clicável */
