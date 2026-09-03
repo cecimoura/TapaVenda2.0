@@ -684,202 +684,280 @@ section{padding-block:var(--sec);position:relative}
   align-items:initial;
 }
 
-/* tablet */
-@media(max-width:900px){
-  .course-accordions{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
+
+/* =========================================================
+   CONDIÇÕES DE COMPRA
+========================================================= */
+
+.offer-body + .course-accordions{
+  margin-top:18px;
 }
 
-/* celular */
-@media(max-width:600px){
-  .offer{
-    border-radius:12px;
+.purchase-cta{
+  display:grid;
+
+  /* esquerda maior + direita controlada */
+  grid-template-columns:minmax(0,1.45fr) minmax(320px,.75fr);
+
+  align-items:center;
+
+  /* aproxima os dois lados */
+  gap:28px;
+
+  /* evita espalhar demais o conteúdo */
+  max-width:980px;
+  margin:0 auto;
+}
+
+.purchase-copy{
+  max-width:620px;
+}
+
+.purchase-action{
+  min-width:0;
+
+  padding-left:28px;
+
+  border-left:1px solid var(--line);
+
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:12px;
+}
+
+.purchase-action .btn{
+  width:100%;
+  padding:17px 22px;
+}
+
+/* TEXTO */
+
+.purchase-copy{
+  max-width:650px;
+}
+
+.purchase-eyebrow{
+  display:block;
+
+  margin-bottom:10px;
+
+  font-family:'Montserrat',sans-serif;
+  font-size:.68rem;
+  font-weight:800;
+
+  letter-spacing:.10em;
+  text-transform:uppercase;
+
+  color:var(--red);
+}
+
+.purchase-copy h4{
+  margin:0 0 10px;
+
+  max-width:580px;
+
+  font-size:clamp(1.15rem,2vw,1.55rem);
+  line-height:1.3;
+
+  color:#fff;
+
+  text-transform:none;
+  letter-spacing:0;
+}
+
+.purchase-copy p{
+  max-width:600px;
+
+  margin:0;
+
+  color:var(--muted);
+
+  font-size:.9rem;
+  line-height:1.65;
+}
+
+
+/* CTA */
+
+.purchase-action{
+  min-width:300px;
+
+  padding-left:32px;
+
+  border-left:1px solid var(--line);
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.purchase-action > span{
+  font-family:'Montserrat',sans-serif;
+
+  font-size:.64rem;
+  font-weight:800;
+
+  letter-spacing:.09em;
+  text-transform:uppercase;
+
+  color:var(--green);
+}
+
+.purchase-action .btn{
+  white-space:nowrap;
+}
+
+
+/* TABLET / MOBILE */
+
+@media(max-width:760px){
+
+  .purchase-cta{
+    grid-template-columns:1fr;
+    gap:25px;
   }
 
-  .offer-top{
-    padding:24px 20px;
+  .purchase-action{
+    min-width:0;
+
+    padding-left:0;
+    padding-top:22px;
+
+    border-left:0;
+    border-top:1px solid var(--line);
   }
+
+  .purchase-action .btn{
+    width:100%;
+    white-space:normal;
+  }
+
+}
+
+/*mobile dos cards de o que está incluso*/
+/* =========================================================
+   MOBILE — ACCORDIONS DO "O QUE ESTÁ INCLUSO"
+========================================================= */
+
+@media (max-width: 700px){
 
   .offer-body{
     padding:20px;
   }
 
   .course-accordions{
-    grid-template-columns:1fr;
-    gap:10px;
+    display:grid;
+    grid-template-columns:1fr !important;
+    gap:12px;
+    width:100%;
+  }
+
+  .topic-accordion{
+    width:100%;
+    min-width:0;
   }
 
   .topic-accordion summary{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    width:100%;
     min-height:auto;
-    padding:15px;
+
+    padding:15px 16px;
+    gap:14px;
   }
 
-  .topic-dropdown{
-    padding:13px 15px 15px 42px;
+  .topic-head{
+    display:flex;
+    align-items:flex-start;
+
+    flex:1 1 auto;
+    min-width:0;
+
+    gap:10px;
+  }
+
+  .topic-head svg{
+    flex:0 0 16px;
+    width:16px;
+    height:16px;
+    margin-top:3px;
+  }
+
+  .topic-title{
+    flex:1;
+    min-width:0;
   }
 
   .topic-title strong{
-    font-size:.84rem;
+    display:block;
+
+    font-size:.82rem;
+    line-height:1.35;
+
+    white-space:normal;
+    word-break:normal;
+    overflow-wrap:break-word;
   }
-}
 
-.conditions-intro{
-  max-width:900px;
-  color:#D6D9DC;
-  font-size:.96rem;
-  line-height:1.7;
-  margin-bottom:32px;
-}
+  .topic-title span{
+    display:block;
 
-.condition-block{
-  padding:24px 0;
-  border-top:1px solid var(--line);
-}
+    margin-top:3px;
 
-.condition-block:first-of-type{
-  border-top:0;
-}
+    font-size:.76rem;
+    line-height:1.4;
 
-.condition-block h5{
-  margin:0 0 8px;
-  font-family:'Montserrat',sans-serif;
-  color:#fff;
-  font-size:1rem;
-  font-weight:800;
-}
-
-.condition-block h5 span{
-  color:var(--red);
-  font-size:.7rem;
-  letter-spacing:.08em;
-  margin-right:8px;
-}
-
-.condition-block > strong{
-  display:block;
-  color:#fff;
-  font-size:.9rem;
-  margin-bottom:7px;
-}
-
-.condition-block > p{
-  color:var(--muted);
-  font-size:.88rem;
-  line-height:1.6;
-  margin-bottom:16px;
-}
-
-/* evita o grid de 2 colunas do CSS original */
-.offer-body .condition-block ul{
-  display:flex;
-  flex-direction:column;
-  gap:9px;
-  margin:0;
-}
-
-.condition-block li{
-  position:relative;
-  display:block;
-  padding-left:17px;
-  font-size:.88rem;
-  color:#D6D9DC;
-}
-
-.condition-block li::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:.55em;
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:var(--red);
-}
-
-.condition-block li b{
-  color:var(--red);
-  font-size:.68rem;
-  font-family:'Montserrat',sans-serif;
-}
-
-.condition-extra{
-  margin-top:30px;
-  padding-top:28px;
-  border-top:1px solid var(--line);
-}
-
-.condition-benefit{
-  padding:16px 0;
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.condition-benefit strong{
-  display:block;
-  color:#fff;
-  margin-bottom:6px;
-}
-
-.condition-benefit p{
-  color:var(--muted);
-  line-height:1.65;
-  font-size:.9rem;
-  margin:0;
-}
-
-.offer-body .condition-bonus ul{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  margin:0;
-}
-
-.condition-bonus li{
-  padding:15px 18px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  background:rgba(255,255,255,.02);
-}
-
-.conditions{
-  margin-top:30px;
-}
-
-.conditions h4{
-  font-family:'Montserrat',sans-serif;
-  font-weight:800;
-  font-size:.78rem;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  color:var(--red);
-  margin-bottom:18px;
-}
-
-.conditions ul{
-  list-style:none;
-  display:grid;
-  gap:12px;
-  margin-bottom:28px;
-}
-
-@media(min-width:720px){
-  .conditions ul{
-    grid-template-columns:1fr 1fr;
+    white-space:normal;
+    word-break:normal;
+    overflow-wrap:break-word;
   }
+
+  .topic-arrow{
+    flex:0 0 28px;
+
+    width:28px;
+    height:28px;
+
+    margin-left:8px;
+  }
+
+  .topic-dropdown{
+    padding:13px 16px 16px 42px;
+  }
+
+  .topic-dropdown ul{
+    display:flex !important;
+    flex-direction:column;
+    gap:8px;
+  }
+
+  .topic-dropdown li{
+    width:100%;
+    font-size:.78rem;
+  }
+
 }
 
-.conditions li{
-  display:flex;
-  gap:10px;
-  align-items:flex-start;
-  font-size:.98rem;
-  color:#D6D9DC;
+@media (max-width:700px){
+
+  .offer-body .course-accordions{
+    grid-template-columns:1fr !important;
+  }
+
+  .offer-body .course-accordions ul{
+    display:flex !important;
+    flex-direction:column !important;
+    grid-template-columns:none !important;
+  }
+
 }
 
-.conditions li svg{
-  flex-shrink:0;
-  margin-top:2px;
-}
+
 
 /* ---------- CTA final ---------- */
 .final{text-align:center}
@@ -904,3 +982,8 @@ footer{border-top:1px solid var(--line)}
 @media(min-width:940px){.dock{display:none}}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important}}
+
+/* REMOVE O BOTÃO FIXO DO FINAL DA PÁGINA */
+.dock{
+  display:none !important;
+}
