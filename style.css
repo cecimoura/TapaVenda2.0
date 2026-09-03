@@ -583,7 +583,6 @@ section{padding-block:var(--sec);position:relative}
 
 
 /* CTA */
-
 .offer-cta{
   margin-top:30px;
   padding-top:26px;
@@ -602,9 +601,7 @@ section{padding-block:var(--sec);position:relative}
 }
 
 
-/* =========================================================
-   O QUE ESTÁ INCLUSO · INTRO
-========================================================= */
+/* O QUE ESTÁ INCLUSO · INTRO */
 
 .offer-intro{
   width:100%;
@@ -620,11 +617,7 @@ section{padding-block:var(--sec);position:relative}
   text-align:center;
 }
 
-
-/* =========================================================
-   CENTRALIZAÇÃO DO CONTEÚDO
-========================================================= */
-
+/* CENTRALIZAÇÃO DO CONTEÚDO */
 .content-legend,
 .course-accordions,
 .offer-extra,
@@ -636,11 +629,7 @@ section{padding-block:var(--sec);position:relative}
   margin-right:auto;
 }
 
-
-/* =========================================================
-   LEGENDA
-========================================================= */
-
+/* LEGENDA */
 .content-legend{
   display:flex;
   align-items:center;
@@ -670,10 +659,7 @@ section{padding-block:var(--sec);position:relative}
   font-size:.76rem;
 }
 
-
-/* =========================================================
-   STATUS
-========================================================= */
+/* STATUS (quadradinho  do lado) */
 
 .status{
   display:inline-flex;
@@ -727,11 +713,7 @@ section{padding-block:var(--sec);position:relative}
   background:rgba(255,255,255,.02);
 }
 
-
-/* =========================================================
-   ACCORDIONS
-========================================================= */
-
+/* ACCORDIONS*/
 .course-accordions{
   display:flex;
   flex-direction:column;
@@ -763,10 +745,7 @@ section{padding-block:var(--sec);position:relative}
 }
 
 
-/* =========================================================
-   CABEÇALHO DO ACCORDION
-========================================================= */
-
+/* CABEÇALHO DO ACCORDION*/
 .course-accordion summary{
   position:relative;
 
@@ -828,10 +807,7 @@ section{padding-block:var(--sec);position:relative}
 }
 
 
-/* =========================================================
-   BOTÃO +
-========================================================= */
-
+/* BOTÃO + giratorio*/
 .accordion-arrow{
   display:flex;
   align-items:center;
@@ -864,11 +840,7 @@ section{padding-block:var(--sec);position:relative}
   background:rgba(255,70,70,.05);
 }
 
-
-/* =========================================================
-   CONTEÚDO ABERTO DO ACCORDION
-========================================================= */
-
+/* CONTEÚDO ABERTO DO ACCORDION */
 .accordion-content{
   width:100%;
   max-width:820px;
@@ -891,9 +863,7 @@ section{padding-block:var(--sec);position:relative}
   text-align:center;
 }
 
-
 /* SOBRESCREVE O GRID PADRÃO DA OFFER-BODY */
-
 .offer-body .accordion-content ul{
   display:flex;
   flex-direction:column;
@@ -910,7 +880,6 @@ section{padding-block:var(--sec);position:relative}
 
 
 /* ITENS INTERNOS */
-
 .accordion-content li{
   display:flex;
   align-items:center;
@@ -934,10 +903,7 @@ section{padding-block:var(--sec);position:relative}
 }
 
 
-/* =========================================================
-   CHECK VERDE
-========================================================= */
-
+/* CHECK VERDE */
 .accordion-content li > span:first-child{
   position:relative;
 
@@ -960,10 +926,7 @@ section{padding-block:var(--sec);position:relative}
 }
 
 
-/* =========================================================
-   ALÉM DAS AULAS
-========================================================= */
-
+/*ALÉM DAS AULAS */
 .offer-extra{
   margin-top:44px;
   padding-top:34px;
@@ -992,11 +955,7 @@ section{padding-block:var(--sec);position:relative}
   font-size:.87rem;
 }
 
-
-/* =========================================================
-   CARDS · ALÉM DAS AULAS
-========================================================= */
-
+/* CARDS · ALÉM DAS AULAS */
 .extra-items{
   display:grid;
 
@@ -1041,7 +1000,6 @@ section{padding-block:var(--sec);position:relative}
   background:rgba(255,255,255,.022);
 }
 
-
 /* CHECK DOS CARDS */
 
 .extra-check{
@@ -1060,9 +1018,7 @@ section{padding-block:var(--sec);position:relative}
   font-weight:700;
 }
 
-
 /* TEXTO DOS CARDS */
-
 .extra-item strong,
 .bonus-item strong{
   display:block;
@@ -1083,11 +1039,7 @@ section{padding-block:var(--sec);position:relative}
   line-height:1.6;
 }
 
-
-/* =========================================================
-   BÔNUS
-========================================================= */
-
+/*  BÔNUS*/
 .offer-bonus{
   margin-top:38px;
 
@@ -1143,11 +1095,7 @@ section{padding-block:var(--sec);position:relative}
   background:rgba(255,70,70,.04);
 }
 
-
-/* =========================================================
-   CARD 02 · CONDIÇÕES DE COMPRA
-========================================================= */
-
+/*CARD 02 · CONDIÇÕES DE COMPRA*/
 .offer-conditions .offer-body{
   max-width:none;
 }
@@ -1169,11 +1117,7 @@ section{padding-block:var(--sec);position:relative}
   margin-right:auto;
 }
 
-
-/* =========================================================
-   RESPONSIVO · TABLET
-========================================================= */
-
+/*RESPONSIVO · TABLET */
 @media(max-width:850px){
 
   .extra-items,
@@ -1188,11 +1132,7 @@ section{padding-block:var(--sec);position:relative}
 
 }
 
-
-/* =========================================================
-   RESPONSIVO · MOBILE
-========================================================= */
-
+/* RESPONSIVO · MOBILE */
 @media(max-width:650px){
 
   .offer-top{
@@ -1207,9 +1147,7 @@ section{padding-block:var(--sec);position:relative}
     text-align:left;
   }
 
-
   /* LEGENDA */
-
   .content-legend{
     flex-direction:column;
     align-items:flex-start;
@@ -1225,9 +1163,7 @@ section{padding-block:var(--sec);position:relative}
     text-align:left;
   }
 
-
   /* ACCORDION */
-
   .course-accordion summary{
     grid-template-columns:1fr 34px;
 
@@ -1267,18 +1203,12 @@ section{padding-block:var(--sec);position:relative}
 
     padding:13px 0;
   }
-
-
   /* ALÉM DAS AULAS */
-
   .extra-heading{
     text-align:left;
   }
-
-  .extra-item,
-  .bonus-item{
+  .extra-item,.bonus-item{
     align-items:flex-start;
-
     text-align:left;
   }
 
