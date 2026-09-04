@@ -608,11 +608,9 @@ section{padding-block:var(--sec);position:relative}
   font-weight:800;
 }
 
-
 .bloco-numero {
   color:var(--red);
 }
-
 
 /* botão + */
 .topic-arrow{
@@ -701,10 +699,7 @@ section{padding-block:var(--sec);position:relative}
   margin-right:auto;
 }
 
-/* =========================================================
-   CONDIÇÕES DE COMPRA
-========================================================= */
-
+/* CONDIÇÕES DE COMPRA */
 .offer-body + .course-accordions{
   margin-top:18px;
 }
@@ -758,9 +753,7 @@ section{padding-block:var(--sec);position:relative}
   text-align:center;
 }
 
-
 /* TEXTO */
-
 .purchase-eyebrow{
   display:block;
 
@@ -801,9 +794,7 @@ section{padding-block:var(--sec);position:relative}
   line-height:1.65;
 }
 
-
 /* CTA */
-
 .purchase-action{
   min-width:300px;
 
