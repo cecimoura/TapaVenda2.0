@@ -483,7 +483,7 @@ section{padding-block:var(--sec);position:relative}
 }
 
 .offer + .offer{
-  margin-top:28px;
+  margin-top:60px;
 }
 
 .offer-top{
@@ -972,22 +972,132 @@ section{padding-block:var(--sec);position:relative}
 
 }
 
-
-
 /* ---------- CTA final ---------- */
 .final{text-align:center}
 .final h2{margin:0 auto 18px;max-width:20ch}
 .final .lead{margin:0 auto 30px}
 
 /* ---------- rodapé (cards CTA + barra) ---------- */
-.foot-ctas{display:grid;gap:14px;margin-bottom:0}
-@media(min-width:760px){.foot-ctas{grid-template-columns:repeat(3,1fr)}}
-.foot-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px}
-.foot-card h3{margin-bottom:6px}
-.foot-card p{font-size:.9rem;margin-bottom:18px}
-footer{border-top:1px solid var(--line)}
-.foot-bar{padding:22px 0;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;color:var(--muted);font-size:.82rem}
-.foot-bar .brand img{height:50px}
+.foot-ctas{
+  display:grid;
+  gap:14px;
+  margin-bottom:0;
+}
+
+@media(min-width:760px){
+  .foot-ctas{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+
+.foot-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--r);
+  padding:22px;
+  min-width:0;
+}
+
+.foot-card h3{
+  margin-bottom:6px;
+}
+
+.foot-card p{
+  font-size:.9rem;
+  margin-bottom:18px;
+}
+
+footer{
+  border-top:1px solid var(--line);
+}
+
+.foot-bar{
+  padding:22px 0;
+  display:flex;
+  gap:20px;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--muted);
+  font-size:.82rem;
+}
+
+.foot-bar .brand{
+  flex-shrink:0;
+}
+
+.foot-bar .brand img{
+  display:block;
+  height:50px;
+  width:auto;
+}
+
+.foot-bar > div{
+  text-align:right;
+  line-height:1.5;
+}
+
+/* ---------- mobile ---------- */
+
+@media(max-width:759px){
+
+  .foot-ctas{
+    grid-template-columns:1fr;
+  }
+
+  .foot-card{
+    width:100%;
+    padding:20px;
+  }
+
+  .foot-card .btn{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+
+  .foot-bar{
+    flex-direction:column;
+    flex-wrap:nowrap;
+    justify-content:center;
+    align-items:center;
+    gap:14px;
+    padding:22px 0;
+    text-align:center;
+  }
+
+  .foot-bar .brand{
+    display:flex;
+    justify-content:center;
+    width:100%;
+  }
+
+  .foot-bar .brand img{
+    height:44px;
+  }
+
+  .foot-bar > div{
+    width:100%;
+    text-align:center;
+    line-height:1.6;
+    overflow-wrap:break-word;
+  }
+}
+
+/* ---------- celulares pequenos ---------- */
+@media(max-width:400px){
+
+  .foot-card{
+    padding:18px;
+  }
+
+  .foot-bar{
+    font-size:.76rem;
+  }
+
+  .foot-bar .brand img{
+    height:40px;
+  }
+}
 
 /* ---------- CTA fixo mobile ---------- */
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:70;padding:12px var(--pad) calc(12px + env(safe-area-inset-bottom));
