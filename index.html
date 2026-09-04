@@ -675,11 +675,33 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
- // Não fecha os outros accordions, cada item permanece aberto até o usuário clicar nele novamente.
-document.querySelectorAll('.topic-accordion').forEach((item) => { 
-    item.addEventListener('toggle', () => {});
-});
 
+/* ACCORDIONS */
+const accordions = document.querySelectorAll('.topic-accordion');
+
+let sincronizando = false;
+
+accordions.forEach((item) => {
+
+    item.addEventListener('toggle', () => {
+
+        if (sincronizando) return;
+
+        sincronizando = true;
+
+        const abrir = item.open;
+
+        accordions.forEach((other) => {
+            other.open = abrir;
+        });
+
+        setTimeout(() => {
+            sincronizando = false;
+        }, 0);
+
+    });
+
+});
 })();
 
 </script>
