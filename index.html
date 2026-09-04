@@ -273,7 +273,7 @@
       <div class="faq-item"><button class="faq-q">Preciso já saber programar? <i></i></button><div class="faq-a"><div>Não. O treinamento começa do zero, pelos fundamentos.</div></div></div>
       <div class="faq-item"><button class="faq-q">É curso de reparo de ECU? <i></i></button><div class="faq-a"><div>Não. O foco é programação automotiva. A biblioteca de +150 ECUs é bônus de consulta.</div></div></div>
       <div class="faq-item"><button class="faq-q">Como funcionam as aulas ao vivo/presenciais? <i></i></button><div class="faq-a"><div>Além das aulas online, o treinamento inclui lives gravadas.</div></div></div>
-      <div class="faq-item"><button class="faq-q">Quanto custa? <i></i></button><div class="faq-a"><div>Fale com um dos nossos especialistas no WhatsApp — eles passam valores e condições certas pro seu momento.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Quanto custa? <i></i></button><div class="faq-a"><div>Fale com um dos nossos especialistas no WhatsApp, eles passam valores e condições certas pro seu momento.</div></div></div>
     </div>
   </div>
 </section>
@@ -654,30 +654,34 @@
       modal.classList.add('open');document.body.style.overflow='hidden';
     });
   });
-  function closeModal(){modal.classList.remove('open');document.body.style.overflow='';modalFrame.innerHTML='';}
-  document.getElementById('modalClose').addEventListener('click',closeModal);
-  modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+ 
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    modalFrame.innerHTML = '';
+}
 
-  document.querySelectorAll('.topic-accordion').forEach((item) => {
+document.getElementById('modalClose').addEventListener('click', closeModal);
 
-  item.addEventListener('toggle', () => {
-
-    if (item.open) {
-      document.querySelectorAll('.topic-accordion').forEach((other) => {
-
-        if (other !== item) {
-          other.open = false;
-        }
-
-      });
+modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+        closeModal();
     }
+});
 
-  });
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
 
+ // Não fecha os outros accordions, cada item permanece aberto até o usuário clicar nele novamente.
+document.querySelectorAll('.topic-accordion').forEach((item) => { 
+    item.addEventListener('toggle', () => {});
 });
 
 })();
+
 </script>
 </body>
 </html>
