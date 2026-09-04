@@ -557,10 +557,6 @@ section{padding-block:var(--sec);position:relative}
   background:rgba(255,255,255,.04);
 }
 
-#topic-title{
-  color: #062608;
-}
-
 /* cabeçalho clicável */
 .topic-accordion summary{
   min-height:82px;
@@ -605,18 +601,18 @@ section{padding-block:var(--sec);position:relative}
 }
 
 .topic-title strong{
-  color:#fff;
+  color:white;
   font-family:'Montserrat',sans-serif;
   font-size:.88rem;
   line-height:1.4;
   font-weight:800;
 }
 
-.topic-title span{
-  color:rgba(255,255,255,.58);
-  font-size:.78rem;
-  line-height:1.4;
+
+.bloco-numero {
+  color:var(--red);
 }
+
 
 /* botão + */
 .topic-arrow{
