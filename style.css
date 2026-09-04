@@ -685,6 +685,21 @@ section{padding-block:var(--sec);position:relative}
   align-items:initial;
 }
 
+.offer-conditions .offer-top{
+  text-align:center;
+}
+
+.offer-conditions .offer-top h3{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.offer-conditions .offer-top p{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 /* =========================================================
    CONDIÇÕES DE COMPRA
@@ -695,48 +710,56 @@ section{padding-block:var(--sec);position:relative}
 }
 
 .purchase-cta{
-  display:grid;
-
-  /* esquerda maior + direita controlada */
-  grid-template-columns:minmax(0,1.45fr) minmax(320px,.75fr);
-
-  align-items:center;
-
-  /* aproxima os dois lados */
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  text-align:center !important;
   gap:28px;
-
-  /* evita espalhar demais o conteúdo */
-  max-width:980px;
+  max-width:850px;
   margin:0 auto;
 }
 
 .purchase-copy{
-  max-width:620px;
+  width:100%;
+  max-width:700px;
+  margin:0 auto;
+  text-align:center;
 }
 
 .purchase-action{
-  min-width:0;
+  width:100% !important;
+  max-width:380px;
+  margin:0 auto !important;
 
-  padding-left:28px;
+  padding-left:0 !important;
+  border-left:none !important;
 
-  border-left:1px solid var(--line);
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
 
-  display:flex;
-  flex-direction:column;
-  align-items:stretch;
+  text-align:center !important;
   gap:12px;
 }
 
-.purchase-action .btn{
+.purchase-action > span{
+  display:block;
   width:100%;
-  padding:17px 22px;
+  text-align:center;
 }
+
+.purchase-action .btn{
+  width:100% !important;
+  max-width:360px;
+  margin:0 auto !important;
+  padding:17px 22px;
+  text-align:center;
+}
+
 
 /* TEXTO */
-
-.purchase-copy{
-  max-width:650px;
-}
 
 .purchase-eyebrow{
   display:block;
@@ -754,9 +777,9 @@ section{padding-block:var(--sec);position:relative}
 }
 
 .purchase-copy h4{
-  margin:0 0 10px;
+  margin:0 auto 10px;
 
-  max-width:580px;
+  max-width:650px;
 
   font-size:clamp(1.15rem,2vw,1.55rem);
   line-height:1.3;
@@ -768,9 +791,9 @@ section{padding-block:var(--sec);position:relative}
 }
 
 .purchase-copy p{
-  max-width:600px;
+  max-width:650px;
 
-  margin:0;
+  margin:0 auto;
 
   color:var(--muted);
 
