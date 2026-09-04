@@ -219,7 +219,17 @@ section{padding-block:var(--sec);position:relative}
   opacity:.85;
 }
 
-/* AO VIVO / PRESENCIAL — cards maiores em destaque */
+/*esteira de coteudos*/
+
+.esteira-titulo{
+    display: inline-block;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    filter: drop-shadow(0 0 8px rgba(255, 3, 3, 0.582));
+} 
+
 .live {
      position: relative;
     width: 100%;
@@ -232,6 +242,28 @@ section{padding-block:var(--sec);position:relative}
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.duvidas-titulo{
+    white-space: nowrap;
+}
+
+/* duvidas-titulo MOBILE */
+@media(max-width:600px){
+    .duvidas-titulo{
+        white-space: normal;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: clamp(1.45rem, 7vw, 1.9rem);
+        line-height: 1.08;
+        text-align: center;
+    }
+
+    .duvidas-titulo span{
+        display: block;
+        margin-top: 3px;
+    }
 }
 
 .live-badge{position:absolute;top:14px;left:14px;z-index:2;background:var(--red);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.68rem;letter-spacing:.08em;padding:6px 14px;border-radius:999px;text-transform:uppercase}
@@ -901,10 +933,7 @@ section{padding-block:var(--sec);position:relative}
 }
 
 /*mobile dos cards de o que está incluso*/
-/* =========================================================
-   MOBILE — ACCORDIONS DO "O QUE ESTÁ INCLUSO"
-========================================================= */
-
+/* MOBILE — ACCORDIONS DO "O QUE ESTÁ INCLUSO"*/
 @media (max-width: 700px){
 
   .offer-body{
