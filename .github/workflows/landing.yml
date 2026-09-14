@@ -30,7 +30,7 @@ jobs:
           docker build -t tapa-landing-test .
           docker run -d --name tapa-landing-test -p 127.0.0.1:18088:80 tapa-landing-test
           trap 'docker rm -f tapa-landing-test' EXIT
-          curl --fail --silent --show-error --retry 8 --retry-delay 2 --retry-connrefused \
+          curl --fail --silent --show-error --retry 8 --retry-delay 2 --retry-all-errors \
             http://127.0.0.1:18088/com-valor/ -o /tmp/tapa-com-valor.html
           curl --fail --silent --show-error \
             http://127.0.0.1:18088/sem-valor/ -o /tmp/tapa-sem-valor.html
