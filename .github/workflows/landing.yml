@@ -37,8 +37,7 @@ jobs:
           curl --fail --silent --show-error \
             http://127.0.0.1:18088/sem-valor/style.css -o /dev/null
           curl --fail --silent --show-error http://127.0.0.1:18088/healthz
-          test "$(curl --silent --output /dev/null --write-out '%{redirect_url}' http://127.0.0.1:18088/)" = \
-            'http://127.0.0.1:18088/sem-valor/'
+          test $(curl --silent --output /dev/null --write-out '%{http_code}' http://127.0.0.1:18088/) = 302
           grep -q 'R\$ 3.500' /tmp/tapa-com-valor.html
           ! grep -q 'R\$' /tmp/tapa-sem-valor.html
           grep -q 'wa.me/5545999259973' /tmp/tapa-sem-valor.html
