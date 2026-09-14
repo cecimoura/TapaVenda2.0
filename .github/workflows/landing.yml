@@ -25,6 +25,23 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Build static sites
         run: python scripts/build.py
+      - name: Test container and both routes
+        run: |
+          docker build -t tapa-landing-test .
+          docker run -d --name tapa-landing-test -p 127.0.0.1:18088:80 tapa-landing-test
+          trap 'docker rm -f tapa-landing-test' EXIT
+          curl --fail --silent --show-error --retry 8 --retry-delay 2 --retry-connrefused \
+            http://127.0.0.1:18088/com-valor/ -o /tmp/tapa-com-valor.html
+          curl --fail --silent --show-error \
+            http://127.0.0.1:18088/sem-valor/ -o /tmp/tapa-sem-valor.html
+          curl --fail --silent --show-error \
+            http://127.0.0.1:18088/sem-valor/style.css -o /dev/null
+          curl --fail --silent --show-error http://127.0.0.1:18088/healthz
+          test "$(curl --silent --output /dev/null --write-out '%{redirect_url}' http://127.0.0.1:18088/)" = \
+            'http://127.0.0.1:18088/sem-valor/'
+          grep -q 'R\$ 3.500' /tmp/tapa-com-valor.html
+          ! grep -q 'R\$' /tmp/tapa-sem-valor.html
+          grep -q 'wa.me/5545999259973' /tmp/tapa-sem-valor.html
       - uses: actions/upload-artifact@v4
         with:
           name: tapa-landing-${{ github.sha }}
@@ -32,43 +49,37 @@ jobs:
           if-no-files-found: error
           retention-days: 14
 
-  deploy:
+  publish-image:
     needs: build
-    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master' && vars.DEPLOY_ENABLED == 'true'
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
-    environment: production
+    permissions:
+      contents: read
+      packages: write
     concurrency:
-      group: tapa-landing-production
+      group: tapa-landing-image
       cancel-in-progress: false
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
         with:
-          name: tapa-landing-${{ github.sha }}
-          path: dist/
-      - name: Configure SSH
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/cecimoura/tapavenda2.0:latest
+            ghcr.io/cecimoura/tapavenda2.0:${{ github.sha }}
+          labels: org.opencontainers.image.source=https://github.com/cecimoura/TapaVenda2.0
+      - name: Ask Portainer to update the Git stack
+        if: vars.PORTAINER_ENABLED == 'true'
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
-          SSH_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
-          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
-          DEPLOY_USER: ${{ vars.DEPLOY_USER }}
-          DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
+          PORTAINER_GITOPS_WEBHOOK: ${{ secrets.PORTAINER_GITOPS_WEBHOOK }}
         run: |
-          test -n "$SSH_PRIVATE_KEY" && test -n "$SSH_KNOWN_HOSTS"
-          test -n "$DEPLOY_HOST" && test -n "$DEPLOY_USER" && test -n "$DEPLOY_ROOT"
-          install -m 700 -d ~/.ssh
-          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/known_hosts
-      - name: Publish both paths
-        env:
-          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
-          DEPLOY_USER: ${{ vars.DEPLOY_USER }}
-          DEPLOY_ROOT: ${{ vars.DEPLOY_ROOT }}
-        run: |
-          ssh -o StrictHostKeyChecking=yes "$DEPLOY_USER@$DEPLOY_HOST" \
-            "mkdir -p '$DEPLOY_ROOT/com-valor' '$DEPLOY_ROOT/sem-valor'"
-          rsync -az --delete --delay-updates -e 'ssh -o StrictHostKeyChecking=yes' \
-            dist/com-valor/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_ROOT/com-valor/"
-          rsync -az --delete --delay-updates -e 'ssh -o StrictHostKeyChecking=yes' \
-            dist/sem-valor/ "$DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_ROOT/sem-valor/"
+          test -n "$PORTAINER_GITOPS_WEBHOOK"
+          curl --fail-with-body --silent --show-error --retry 3 \
+            --max-time 30 --request POST "$PORTAINER_GITOPS_WEBHOOK"
